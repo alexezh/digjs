@@ -1,9 +1,3 @@
-import skyUrl from '../../assets/sky.png';
-import platformUrl from '../../assets/platform.png';
-import starUrl from '../../assets/star.png';
-import bombUrl from '../../assets/bomb.png';
-import dudeUrl from '../../assets/dude.png';
-
 export class Player {
   readonly dudeAnimLeft: string = 'dudeAnimLeft';
   readonly dudeAnimTurn: string = 'dudeAnimTurn';
@@ -15,7 +9,7 @@ export class Player {
   public get sprite(): Phaser.Physics.Arcade.Sprite { return this.player; }
 
   public preload(scene: Phaser.Scene) {
-    scene.load.spritesheet(this.dude, dudeUrl, {
+    scene.load.spritesheet(this.dude, "./assets/dude.png", {
       frameWidth: 32,
       frameHeight: 48,
     });
@@ -96,10 +90,10 @@ export default class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image(this.sky, skyUrl);
-    this.load.image(this.platform, platformUrl);
-    this.load.image(this.star, starUrl);
-    this.load.image(this.bomb, bombUrl);
+    this.load.image(this.sky, "./assets/sky.png");
+    this.load.image(this.platform, "./assets/platform.png");
+    this.load.image(this.star, "./assets/star.png");
+    this.load.image(this.bomb, "./assets/bomb.png");
 
     this.player.preload(this);
   }
